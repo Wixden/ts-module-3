@@ -7,21 +7,21 @@
   class BankAccount {
     public readonly id: number;
     public name: string;
-    private balance: number;
+    private _balance: number;
 
     constructor(id: number, name: string, balance: number) {
       this.id = id;
       this.name = name;
-      this.balance = balance;
+      this._balance = balance;
     }
 
     addBalance(amount: number) {
-      const newBalance = (this.balance += amount);
+      const newBalance = (this._balance += amount);
       return `$${amount} added and new balance $${newBalance}`;
     }
 
     getBalance() {
-      return this.balance;
+      return this._balance;
     }
   }
 
