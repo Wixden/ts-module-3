@@ -16,7 +16,12 @@
     }
 
     addBalance(amount: number) {
-      console.log(amount);
+      const newBalance = (this.balance += amount);
+      return `$${amount} added and new balance $${newBalance}`;
+    }
+
+    getBalance() {
+      return this.balance;
     }
   }
 
@@ -25,6 +30,13 @@
   // personOne.id = 134567; // now here we can't modify the value of id, which is readonly.
 
   // personOne.balance = 2; // we can't change the value of balance because it is private, which can only be accessed inside the class scope.
+
+  // now we created a function to add amount to the balance property:
+  const addMoney = personOne.addBalance(5000);
+  console.log(addMoney);
+
+  const myBalance = personOne.getBalance();
+  console.log(`My balance: $${myBalance}`);
 
   // ==============================================================
 }
