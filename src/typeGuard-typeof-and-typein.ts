@@ -39,6 +39,18 @@
     }
   };
 
+  const user1: NormalUser = {
+    name: "John",
+  };
+
+  const adminUser: AdminUser = {
+    name: "John",
+    role: "Admin",
+  };
+
+  getUser(user1);
+  getUser(adminUser);
+
   // You can access the role property in here.
 
   // ==============================================================
