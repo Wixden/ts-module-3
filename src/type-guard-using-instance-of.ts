@@ -5,16 +5,42 @@
   class Animal {
     name: string;
     species: string;
+    sound: string;
 
-    constructor(name: string, species: string) {
+    constructor(name: string, species: string, sound: string) {
       this.name = name;
       this.species = species;
+      this.sound = sound;
     }
 
     makeSound() {
       console.log("Animal makes sound!");
     }
   }
+
+  class Dog extends Animal {
+    constructor(name: string, species: string, sound: string) {
+      super(name, species, sound);
+    }
+
+    dogSound() {
+      console.log("Dog is barking!");
+    }
+  }
+
+  class Cat extends Animal {
+    constructor(name: string, species: string, sound: string) {
+      super(name, species, sound);
+    }
+    catSound() {
+      console.log("Cat is Mewaoing!");
+    }
+  }
+
+  const dog = new Dog("Peter", "Dog", "Woof");
+  const cat = new Cat("Solaza", "Cat", "Meow");
+  dog.dogSound();
+  cat.catSound();
 
   // ==============================================================
 }
