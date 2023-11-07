@@ -55,6 +55,7 @@
   // getAnimal(dog);
   // getAnimal(cat);
 
+  // Type guard | Type Narrowing | Specif Type
   // Handling the instance in a smart way using function
   const isDog = (animal: Animal): animal is Dog => {
     return animal instanceof Dog;
