@@ -56,11 +56,21 @@
   // getAnimal(cat);
 
   // Handling the instance in a smart way using function
-  const isDog = (animal: Animal) => {
+  const isDog = (animal: Animal): animal is Dog => {
     return animal instanceof Dog;
   };
-  const isCat = (animal: Animal) => {
+  const isCat = (animal: Animal): animal is Cat => {
     return animal instanceof Cat;
+  };
+
+  const getAnimal2 = (animal: Animal) => {
+    if (isDog(animal)) {
+      return animal.dogSound();
+    } else if (isCat(animal)) {
+      return animal.catSound();
+    } else {
+      return animal.makeSound();
+    }
   };
 
   // ==============================================================
