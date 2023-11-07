@@ -8,11 +8,13 @@
     public readonly id: number;
     public name: string;
     private _balance: number;
+    protected _type: string;
 
-    constructor(id: number, name: string, balance: number) {
+    constructor(id: number, name: string, balance: number, type: string) {
       this.id = id;
       this.name = name;
       this._balance = balance;
+      this._type = type;
     }
 
     addBalance(amount: number) {
@@ -25,7 +27,14 @@
     }
   }
 
-  const personOne = new BankAccount(134567, "John Smith", 56000);
+  // if we want any property to be accessible by child classes but unaccessible to instances we declare that property with "protected" modifier.
+  class StudentAccount extends BankAccount {
+    test() {
+      this._type = "Student Account"; // now we have access to the "_type" property which is protected from instances
+    }
+  }
+
+  const personOne = new BankAccount(134567, "John Smith", 56000, "Savings");
   personOne.name = "Mark Benjamin"; // we can change the name because it is not readonly
   // personOne.id = 134567; // now here we can't modify the value of id, which is readonly.
 
