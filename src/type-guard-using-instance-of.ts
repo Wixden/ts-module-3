@@ -39,8 +39,21 @@
 
   const dog = new Dog("Peter", "Dog", "Woof");
   const cat = new Cat("Solaza", "Cat", "Meow");
-  dog.dogSound();
-  cat.catSound();
+  // dog.dogSound();
+  // cat.catSound();
+
+  const getAnimal = (animal: Animal) => {
+    if (animal instanceof Dog) {
+      return animal.dogSound();
+    } else if (animal instanceof Cat) {
+      return animal.catSound();
+    } else {
+      return animal.makeSound();
+    }
+  };
+
+  getAnimal(dog);
+  getAnimal(cat);
 
   // ==============================================================
 }
