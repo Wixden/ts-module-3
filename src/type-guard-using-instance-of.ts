@@ -52,8 +52,16 @@
     }
   };
 
-  getAnimal(dog);
-  getAnimal(cat);
+  // getAnimal(dog);
+  // getAnimal(cat);
+
+  // Handling the instance in a smart way using function
+  const isDog = (animal: Animal) => {
+    return animal instanceof Dog;
+  };
+  const isCat = (animal: Animal) => {
+    return animal instanceof Cat;
+  };
 
   // ==============================================================
 }
