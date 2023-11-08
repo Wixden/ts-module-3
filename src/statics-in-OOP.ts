@@ -42,5 +42,22 @@
   const instance5 = new Counter2();
   console.log(instance5.increment());
 
+  // Now we will try using static for methods
+  class Counter3 {
+    static count: number = 0;
+
+    static increment() {
+      return (Counter3.count = Counter3.count + 1);
+    }
+    static decrement() {
+      return (Counter3.count = Counter3.count - 1);
+    }
+  }
+
+  // to call the static method we will need to call it using the class name instead of creating any instance.
+  console.log(Counter3.increment());
+  console.log(Counter3.increment());
+  console.log(Counter3.increment());
+
   // ==============================================================
 }
