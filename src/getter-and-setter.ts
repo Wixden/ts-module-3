@@ -46,10 +46,10 @@
   // console.log(`My balance: $${myBalance}`);
 
   const addMoney = (personOne.deposit = 78000);
-  console.log(addMoney);
+  console.log("Money added: $", addMoney);
 
   const myBalance2 = personOne.balance; // using the function as property.
-  console.log(`My balance is: $${myBalance2}`);
+  console.log("My balance is: $", myBalance2);
 
   // ==============================================================
 }
